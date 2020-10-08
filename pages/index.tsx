@@ -1,10 +1,13 @@
-import { Flex, Heading } from "@chakra-ui/core";
+import { Box, Flex, Heading, Text } from "@chakra-ui/core";
 
 const IndexPage = ({ id, textColor, bgUrl }) => {
   console.log({ id, textColor, bgUrl });
   return (
     <Flex direction="column" align="center" justify="center">
       <Heading as="h1">Test App</Heading>
+      <Box>
+        <Text color="red.500">hack the planet!</Text>
+      </Box>
     </Flex>
   );
 };
