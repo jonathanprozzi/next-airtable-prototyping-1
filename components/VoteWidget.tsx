@@ -1,12 +1,16 @@
 import { Flex, ButtonGroup, Button, Text } from "@chakra-ui/core";
 
-const handleUpvote = (rating) => {
+// TODO: fetch to updateResource endpoint with the id, current rating, and add/subtract
+
+const handleUpvote = (id, rating) => {
   console.log("upvote!");
+  console.log(id);
   console.log(rating);
 };
 
-const handleDownvote = (rating) => {
+const handleDownvote = (id, rating) => {
   console.log("downVote!");
+  console.log(id);
   console.log(rating);
 };
 
@@ -17,7 +21,7 @@ const VoteWidget = ({ id, rating }) => {
       <Text color="white">Rating: {rating}</Text>
       <ButtonGroup marginY={2}>
         <Button
-          onClick={() => handleUpvote({ rating })}
+          onClick={() => handleUpvote({ id }, { rating })}
           colorScheme="cyan"
           variant="outline"
           width="100%"
@@ -25,7 +29,7 @@ const VoteWidget = ({ id, rating }) => {
           Upvote
         </Button>
         <Button
-          onClick={() => handleDownvote({ rating })}
+          onClick={() => handleDownvote({ id }, { rating })}
           colorScheme="cyan"
           variant="outline"
           width="100%"
