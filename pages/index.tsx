@@ -1,5 +1,7 @@
 import { Box, Button, ButtonGroup, Flex, Heading, Text } from "@chakra-ui/core";
 
+import VoteWidget from "../components/VoteWidget";
+
 const IndexPage = ({ id, textColor, bgUrl }) => {
   console.log({ id, textColor, bgUrl });
   return (
@@ -7,19 +9,9 @@ const IndexPage = ({ id, textColor, bgUrl }) => {
       <Heading as="h1" color="white">
         Test App
       </Heading>
-      <Box>
+      <Box paddingY={4}>
         <Text color="white">hack the planet!</Text>
       </Box>
-      <Flex direction="column" align="center" justify="center">
-        <ButtonGroup>
-          <Button colorScheme="cyan" variant="outline">
-            Upvote
-          </Button>
-          <Button colorScheme="cyan" variant="outline">
-            Downvote
-          </Button>
-        </ButtonGroup>
-      </Flex>
     </Flex>
   );
 };
