@@ -1,13 +1,25 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/core";
+import { Box, Button, ButtonGroup, Flex, Heading, Text } from "@chakra-ui/core";
 
 const IndexPage = ({ id, textColor, bgUrl }) => {
   console.log({ id, textColor, bgUrl });
   return (
     <Flex direction="column" align="center" justify="center">
-      <Heading as="h1">Test App</Heading>
+      <Heading as="h1" color="white">
+        Test App
+      </Heading>
       <Box>
-        <Text color="red.500">hack the planet!</Text>
+        <Text color="white">hack the planet!</Text>
       </Box>
+      <Flex direction="column" align="center" justify="center">
+        <ButtonGroup>
+          <Button colorScheme="cyan" variant="outline">
+            Upvote
+          </Button>
+          <Button colorScheme="cyan" variant="outline">
+            Downvote
+          </Button>
+        </ButtonGroup>
+      </Flex>
     </Flex>
   );
 };
