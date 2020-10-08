@@ -7,7 +7,7 @@ const getAllResources = (req, res) => {
       table
         .select({
           view: "All Resources",
-          sort: [{ field: "created", direction: "desc" }],
+          // sort: [{ field: "created", direction: "asc" }],
           maxRecords: 10,
         })
         .eachPage(

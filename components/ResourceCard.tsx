@@ -8,7 +8,14 @@ const ResourceCard = ({ data }) => {
         {data.fields["name"]}
       </Heading>
 
-      <VoteWidget id={data.fields["id"]} rating={data.fields["rating"]} />
+      <VoteWidget
+        id={data.fields["id"]}
+        rating={
+          data.fields["rating"] !== undefined
+            ? data.fields["rating"]
+            : "lol nope"
+        }
+      />
     </Flex>
   );
 };
