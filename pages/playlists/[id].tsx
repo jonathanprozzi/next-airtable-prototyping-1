@@ -16,7 +16,7 @@ export async function getServerSideProps({ params }) {
   const baseId = process.env.BASE_ID;
   const tableName = 'Playlists'
 
-
+// TODO: clean up this API call and see if it can be moved to an actual API route
   const res = await fetch(
     `https://api.airtable.com/v0/${baseId}/${tableName}?filterByFormula=%7Bplaylist-slug%7D%3D%27${params.id}%27&api_key=${airApiKey}`,
     { method: "GET", mode: "no-cors", credentials: "same-origin" }
