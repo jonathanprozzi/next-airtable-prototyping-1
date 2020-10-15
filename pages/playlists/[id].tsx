@@ -3,10 +3,10 @@ import { Box, Flex, Heading, Text} from "@chakra-ui/core";
 
 const PlaylistPage = ({title, description}) => {
   return (
-    <Box marginX='auto' marginY='0'>
+    <Box>
       <Flex direction='column' justify='center' align='center'>
-        <Heading color='white'>{title}</Heading>
-        <Text color='white' maxWidth='80ch'>{description}</Text>
+        <Heading color='cyan.200'>{title}</Heading>
+        <Text color='cyan.200' maxWidth='80ch'>{description}</Text>
       </Flex>
     </Box>
   )
