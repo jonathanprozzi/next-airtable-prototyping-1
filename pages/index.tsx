@@ -5,20 +5,24 @@ import VoteWidget from "../components/VoteWidget";
 const IndexPage = ({ id, textColor, bgUrl }) => {
   console.log({ id, textColor, bgUrl });
   return (
-    <Box backgroundImage={`url(${bgUrl})`}
-    backgroundRepeat="no-repeat"    backgroundPosition="center center"
+    <Flex backgroundImage={`url(${bgUrl}), linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0))`}
+    backgroundBlendMode='overlay'
+    backgroundRepeat="no-repeat"
+    backgroundPosition="center center"
     backgroundSize='cover'
     minHeight='100vh'
+    align='center'
+    justify='center'
     >
     <Flex direction="column" align="center" justify="center" >
-      <Heading as="h1" color="white">
+      <Heading as="h1" color="cyan.200">
         Test App
       </Heading>
       <Box paddingY={4} >
-        <Text color="white">hack the planet!</Text>
+        <Text color="cyan.200">hack the planet!</Text>
       </Box>
     </Flex>
-    </Box>
+    </Flex>
   );
 };
 
