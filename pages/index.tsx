@@ -39,14 +39,14 @@ export async function getServerSideProps() {
   // this works by recordID, but this isnt ideal for the slug
   // `https://api.airtable.com/v0/${baseId}/${tableName}/${params.uuid}?api_key=${airApiKey}`,
 
-  const airtableData = await res.json();
+  const data = await res.json();
 
-  if (airtableData.records.length > 0) {
+  if (data.records.length > 0) {
     return {
       props: {
-        id: airtableData.records[0].fields["id"],
-        textColor: airtableData.records[0].fields["textColor"] || "dark",
-        bgUrl: airtableData.records[0].fields["bgUrl"] || "none",
+        id: data.records[0].fields["id"],
+        textColor: data.records[0].fields["textColor"] || "dark",
+        bgUrl: data.records[0].fields["bgUrl"] || "none",
       },
     };
   } else {
