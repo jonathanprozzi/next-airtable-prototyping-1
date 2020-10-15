@@ -1,10 +1,11 @@
 import { Box, Flex, Heading, Text} from "@chakra-ui/core";
 
 
-const PlaylistPage = ({title, description}) => {
+const PlaylistPage = ({data, title, description}) => {
+  console.log({data, title, description})
   return (
     <Box>
-      <Flex direction='column' justify='center' align='center'>
+       <Flex direction='column' justify='center' align='center'>
         <Heading color='cyan.200'>{title}</Heading>
         <Text color='cyan.200' maxWidth='80ch'>{description}</Text>
       </Flex>
@@ -31,13 +32,14 @@ export async function getServerSideProps({ params }) {
     return {
       props: {
         title: data.records[0].fields["Playlist Title"] || "Mystery Playlist",
-        description: data.records[0].fields["Description"] || "Coming soon!"
+        description: data.records[0].fields["Description"] || "Coming soon!",
+        slug: data.records[0].fields["playlist-slug"] || 'empty'
       },
     };
   } else {
     return {
       props: {
-        name: "empty",
+        title: "empty",
       },
     };
   }
