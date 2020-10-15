@@ -3,11 +3,21 @@ import { Box, Flex, Heading, Text} from "@chakra-ui/core";
 
 const PlaylistPage = ({data, title, description}) => {
   console.log({data, title, description})
+
   return (
     <Box>
        <Flex direction='column' justify='center' align='center'>
-        <Heading color='cyan.200'>{title}</Heading>
-        <Text color='cyan.200' maxWidth='80ch'>{description}</Text>
+        {title !== 'empty' ? (
+          <>
+          <Heading color='cyan.200'>{title}</Heading>
+          <Text color='cyan.200' maxWidth='80ch'>{description}</Text>
+          </>
+        ) : (
+          <>
+          <Heading color='cyan.200'>That playlist doesn't exist!</Heading>
+          </>
+        )
+      }
       </Flex>
     </Box>
   )
